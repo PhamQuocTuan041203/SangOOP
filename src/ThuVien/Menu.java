@@ -45,6 +45,7 @@ public class Menu {
 					System.out.println("Data Error!");
 					break;
 			}
+
 			if (lc.equals("0"))
 				break;
 		}
@@ -53,7 +54,6 @@ public class Menu {
 	public void DangNhap() {
 		int chon;
 		DanhSachAdmin();
-
 		while (true) {
 			String user, pass;
 			System.out.print("\nAccount: ");
@@ -97,20 +97,18 @@ public class Menu {
 				case "0":
 					break;
 				case "1":
-					break;
-				case "2":
 					DanhSachNhanVien.QuanLyNhanVien();
 					break;
-				case "3":
+				case "2":
 					DanhSachSach.QuanLySach();
 					break;
-				case "4":
+				case "3":
 					DanhSachTheThuVien.QuanLyTheThuVien();
 					break;
-				case "5":
+				case "4":
 					DanhSachTheMuon.xuatthemuon();
 					break;
-				case "6":
+				case "5":
 					QuanLyPhieuNhap();
 					break;
 
@@ -118,7 +116,63 @@ public class Menu {
 					System.out.println("Data Error!");
 					break;
 			}
-			
+
+			if (lc.equals("0")) {
+				break;
+			}
+		}
+	}
+
+	public void QuanLyNhanVien() {
+		String lc;
+		while (true) {
+			System.out.println("\n!====== NHAN VIEN ======!");
+			System.out.println("1.Thong ke sach Viet Nam");
+			System.out.println("2.Thong ke sach Giao Khoa");
+			System.out.println("3.Thong ke tat ca sach");
+			System.out.println("4.Tim kiem sach");
+			System.out.println("5.Nhap vao sach muon muon");
+			System.out.println("6.Nguoi dung muon sach");
+			System.out.println("7.Xuat danh sach the muon");
+			System.out.println("8.Nguoi dung tra sach");
+			System.out.println("0. Return");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.print("Your choosen: ");
+			lc = sc.nextLine();
+
+			switch (lc) {
+				case "0":
+					break;
+				case "1":
+					DanhSachSach.xuatdssvn();
+					break;
+				case "2":
+					DanhSachSach.xuatdssgk();
+					break;
+				case "3":
+					DanhSachSach.xuatds();
+					break;
+				case "4":
+					DanhSachSach.timkiemsach();
+					break;
+				case "5":
+					MuonSach();
+					break;
+				case "6":
+					ChoMuonSach();
+					break;
+				case "7":
+					DanhSachTheMuon.xuatthemuon();
+					break;
+				case "8":
+					TraSach();
+					break;
+
+				default:
+					System.out.println("Data Error!");
+					break;
+			}
+
 			if (lc.equals("0")) {
 				break;
 			}
@@ -126,94 +180,45 @@ public class Menu {
 	}
 
 	public void QuanLyPhieuNhap() {
-		System.out.printf("\n");
-		int chon;
-		do {
-			System.out.println("=============== Quan ly Phieu Nhap ===============");
-			System.out.println("|||    1.Nhap vao phieu nhap co san  |||");
-			System.out.println("|||    2.Xem phieu nhap              |||");
-			System.out.println("|||    4.Xoa phieu nhap              |||");
-			System.out.println("|||    5.Tim kiem phieu nhap         |||");
-			System.out.println("|||    0.Thoat                       |||");
-			System.out.println("---Nhap vao chuc nang:");
-			String temp = sc.nextLine();
+		String lc;
+		while (true) {
+			System.out.println("\n!= MANAGEMENT PHIEU NHAP =!");
+			System.out.println("1. Add PhieuNhap");
+			System.out.println("2. List PhieuNhap");
+			System.out.println("3. Delete PhieuNhap");
+			System.out.println("4. Find PhieuNhap");
+			System.out.println("0. Return");
+			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			System.out.print("Your choosen: ");
+			lc = sc.nextLine();
 
-			chon = Integer.parseInt(temp);
-			switch (chon) {
-				case 1:
+			switch (lc) {
+				case "1":
 					DanhSachPhieuNhap.nhapds();
 					break;
-				case 2:
+				case "2":
 					DanhSachPhieuNhap.Xuat();
 					break;
-				case 4:
+				case "3":
 					DanhSachPhieuNhap.xoapn();
 					break;
-				case 5:
+				case "4":
 					DanhSachPhieuNhap.timkiempn();
 					break;
+
+				default:
+					System.out.println("Error Data!");
+					break;
 			}
-		} while (chon != 0);
+
+			if (lc.equals("0")) {
+				break;
+			}
+		}
 		DanhSachAdmin();
 	}
 
-	public void QuanLyNhanVien()// quan ly nhan vien
-	{
-		int chon;
-		do {
-			System.out.println("-------------------------------");
-			System.out.println("==========Tai Khoan Nhan Vien===========");
-			System.out.println("!-----------------------------!");
-			System.out.println("|||   1.Thong ke sach Viet Nam        |||");
-			System.out.println("|||   2.Thong ke sach Giao Khoa       |||");
-			System.out.println("|||   3.Thong ke tat ca cac sach      |||");
-			System.out.println("|||   4.Tim kiem sach                 |||");
-			System.out.println("|||   5.Nhap vao sach muon muon       |||");
-			System.out.println("|||   6.Nguoi dung muon sach          |||");
-			System.out.println("|||   7.Xuat danh sach the muon       |||");
-			System.out.println("|||   8.Nguoi dung tra sach           |||");
-			System.out.println("|||   0.Thoat                         |||");
-			System.out.println("!-----------------------------!");
-			System.out.println("---Chon chuc nang:");
-			chon = Integer.parseInt(sc.nextLine());
-			switch (chon) {
-				case 0:
-					break;
-				case 1:
-					DanhSachSach.xuatdssvn();
-					break;
-
-				case 2:
-					DanhSachSach.xuatdssgk();
-					break;
-				case 3:
-					DanhSachSach.xuatds();
-					break;
-				case 4:
-					DanhSachSach.timkiemsach();
-					break;
-				case 5:
-					MuonSach();
-					break;
-				case 6:
-					ChoMuonSach();
-					break;
-
-				case 7:
-					DanhSachTheMuon.xuatthemuon();
-					break;
-				case 8:
-					TraSach();
-					break;
-				default:
-					System.out.println("Nhap vao khong hop le");
-					break;
-			}
-		} while (chon != 0);
-	}
-
-	public void MuonSach() // cho muon sach
-	{
+	public void MuonSach() {
 		do {
 			DanhSachSach.xuatds();
 			System.out.println("Nhap vao sach muon muon hoac nhan 0 de thoat");
@@ -231,8 +236,7 @@ public class Menu {
 		} while (true);
 	}
 
-	public void ChoMuonSach()// truy xuat den the muon
-	{
+	public void ChoMuonSach() {
 		TheThuVien thethuvien = new TheThuVien();
 		System.out.println("Nhap ma doc gia:");
 		String MaDocGia = sc.nextLine();
@@ -247,6 +251,7 @@ public class Menu {
 		String NgayMuon = sc.nextLine();
 		System.out.println("Nhap vao ngay tra:");
 		String NgayTra = sc.nextLine();
+
 		for (int i = 0; i < DanhSachSachMuon.getN(); i++) {
 			themuon The = new themuon();
 			The.setHanTra(NgayTra);
@@ -272,7 +277,6 @@ public class Menu {
 					HeThongXuPhat xlvp = new XuLyViPham();
 					System.out.println("Moi nop phat:" + xlvp.getXuphat());
 				}
-
 			}
 		}
 	}

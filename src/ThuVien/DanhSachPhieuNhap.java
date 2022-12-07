@@ -38,7 +38,6 @@ public class DanhSachPhieuNhap {
 			PhieuNhapSach a = new PhieuNhapSach();
 			DanhSachPhieuNhap[i] = new PhieuNhapSach();
 			DanhSachPhieuNhap[i].Nhap();
-
 		}
 	}
 

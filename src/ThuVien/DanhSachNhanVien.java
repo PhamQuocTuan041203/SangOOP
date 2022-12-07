@@ -21,6 +21,14 @@ public class DanhSachNhanVien {
 		this.DanhSachNhanVien = arrnv;
 	}
 
+	public int getN() {
+		return n;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+	
 	public void xuatds() {
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			DanhSachNhanVien[i].Xuat();
