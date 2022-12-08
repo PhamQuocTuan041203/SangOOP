@@ -63,18 +63,18 @@ public class NhanVien {
 	}
 
 	public void nhap() {
-		System.out.print("Nhập Mã_Nv: ");
+		System.out.print("Nhap ma nhan vien: ");
 		MaNV = sc.nextLine();
-		System.out.print("Nhập họ & tên: ");
+		System.out.print("Nhap ho va ten nhan vien: ");
 		hoten = sc.nextLine();
-		System.out.print("Nhập lương cơ bản: ");
+		System.out.print("Nhap luong co ban: ");
 		luongcb = Integer.parseInt(sc.nextLine());
-		System.out.print("Nhập hệ số lương: ");
+		System.out.print("Nhap he so luong: ");
 		hesoluong = Integer.parseInt(sc.nextLine());
 	}
 
 	public void Xuat() {
-		System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "Mã_Nv", "Name", "Lương Cơ Bản", "Hệ Số Lương",
+		System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "Ma nhan vien", "Ten nhan vien", "Luong co ban", "He so luong",
 				"Luong chinh thuc");
 		System.out.printf("%-15s%-20s%-20s%-15s%-15s\n", this.MaNV, this.hoten, this.luongcb, this.hesoluong,
 				tinhluong());

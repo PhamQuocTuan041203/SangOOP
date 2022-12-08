@@ -30,14 +30,14 @@ public class DocGia extends ConNguoi{
     public void Nhap()
     {
         
-        System.out.println("Nhap vao ma doc gia:");
+        System.out.println("Nhap vao ma doc gia: ");
         MaDocGia=sc.nextLine();
         super.Nhap();
     }
     @Override 
     public void Xuat()
     {
-        System.out.printf("%-15s%-15s%-20s%-20s%-20s%-20s%-20s\n","Ma doc gia","Ho ten", "Ngay sinh" ,"Email", "Dien thoai" ,"Dia chi","Gioi tinh" );
+        System.out.printf("%-15s%-15s%-20s%-20s%-20s%-20s%-20s\n","Ma doc gia", "Ho ten", "Ngay sinh" ,"Email", "Dien thoai" , "Dia chi", "Gioi tinh" );
         System.out.printf("%-15s%-15s%-20s%-20s%-20s%-20s%-20s\n",this.MaDocGia,this.hoten , this.ngaysinh ,this.email, this.dienthoai , this.dc,this.gioitinh );
     }
  

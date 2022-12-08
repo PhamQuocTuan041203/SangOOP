@@ -20,11 +20,11 @@ public class DanhSachSGK {
 	}
 
 	public void nhapds() {
-		System.out.println("Nhap vao so luong sach giao khoa:");
+		System.out.println("Nhap vao so luong sach giao khoa: ");
 		n = Integer.parseInt(sc.nextLine());
 		arrsgk = new SachGiaoKhoa[n];
 		for (int i = 0; i < n; i++) {
-			System.out.println("Nhap vao sach thu :" + (i + 1));
+			System.out.println("Nhap vao sach thu: " + (i + 1));
 			Sach a = new Sach();
 			arrsgk[i] = new SachGiaoKhoa();
 			arrsgk[i].Nhap();
@@ -33,22 +33,18 @@ public class DanhSachSGK {
 
 	public void xuatds() {
 
-		System.out.println(
-				"+-------------------------------------------------------------------------------------------------------+");
-		System.out.println(
-				"+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
+		System.out.println("==================================================");
+		System.out.println("=============== DANH SACH CAC SACH ===============");
 
 		for (int i = 0; i < arrsgk.length; i++) {
 			arrsgk[i].Xuat();
-			System.out.println(
-					"|____________________________________________________________________________________________________|");
+			System.out.println("==================================================");
 		}
-		System.out.println(
-				"+-------------------------------------------------------------------------------------------------------+");
+		System.out.println("==================================================");
 	}
 
 	public void nhapthemsach() {
-		System.out.println("Nhap them thong tin sach giao khoa:");
+		System.out.println("Nhap them thong tin sach giao khoa: ");
 		SachGiaoKhoa sgk = new SachGiaoKhoa();
 		sgk.Nhap();
 		arrsgk = Arrays.copyOf(arrsgk, arrsgk.length + 1);
@@ -57,7 +53,7 @@ public class DanhSachSGK {
 	}
 
 	public void xoasach() {
-		System.out.println("Nhap ma sach can xoa:");
+		System.out.println("Nhap ma sach can xoa: ");
 		String xoas = sc.nextLine();
 		for (int i = 0; i < arrsgk.length; i++) {
 			if (arrsgk[i].getMaSach().equalsIgnoreCase(xoas)) {
@@ -71,7 +67,7 @@ public class DanhSachSGK {
 	}
 
 	public void timkiemsach() {
-		System.out.println("Nhap vao sach can tim:");
+		System.out.println("Nhap vao sach can tim: ");
 		String tims = sc.nextLine();
 		for (int i = 0; i < arrsgk.length; i++) {
 			if (arrsgk[i].getMaSach().equalsIgnoreCase(tims)) {

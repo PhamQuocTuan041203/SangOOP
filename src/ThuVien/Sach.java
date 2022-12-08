@@ -12,7 +12,7 @@ import java.util.Scanner;
     protected String nhaXB;
     protected String tinhtrang;
     protected String theloai;
-              Scanner sc=new Scanner(System.in);
+    Scanner sc=new Scanner(System.in);
 
     public Sach() {
         
@@ -24,10 +24,7 @@ import java.util.Scanner;
         this.tenTacGia = tenTacGia;
         this.nhaXB = nhaXB;
         this.tinhtrang=tinhtrang;
-  
     }
-
-   
     
     public String getMaSach() {
         return maSach;
@@ -38,7 +35,7 @@ import java.util.Scanner;
     }
     public void setMaSach()
     {
-        System.out.println("Nhap vao ma sach:");
+        System.out.println("Nhap vao ma sach: ");
         maSach=sc.nextLine();
     }
     
@@ -51,7 +48,7 @@ import java.util.Scanner;
     }
     public void setTenSach()
     {
-        System.out.println("Nhap vao ten sach:");
+        System.out.println("Nhap vao ten sach: ");
         tenSach=sc.nextLine();
     }
     public String getTenTacGia() {
@@ -63,7 +60,7 @@ import java.util.Scanner;
     }
     public void setTenTacGia()
     {
-        System.out.println("Nhap vao ten tac gia");
+        System.out.println("Nhap vao ten tac gia: ");
         tenTacGia=sc.nextLine();
     }
     
@@ -76,7 +73,7 @@ import java.util.Scanner;
     }
     public void setNhaXB()
     {
-        System.out.println("Nhap vao nha xuat ban:");
+        System.out.println("Nhap vao nha xuat ban: ");
         nhaXB=sc.nextLine();
     }
 
@@ -89,17 +86,16 @@ import java.util.Scanner;
     }
     public void setTinhtrang()
     {
-        System.out.println("Tinh trang sach:");
+        System.out.println("Tinh trang sach: ");
         tinhtrang=sc.nextLine();
     }
     public String getTheloai()
     {
         return theloai;
     }
-     public void setTheloai() {
-         System.out.println("The loai gi:");
-         theloai=sc.nextLine();
- 
+    public void setTheloai() {
+        System.out.println("The loai gi: ");
+        theloai=sc.nextLine();
     }
 
     public void setTheloai(String theloai) {
@@ -117,10 +113,10 @@ import java.util.Scanner;
         setTheloai();
         
     }
-   
+
     public void sua()
     {
-        System.out.println("Sua thong tin sach theo ma sach:");
+        System.out.println("Sua thong tin sach theo ma sach: ");
         Sach s = new Sach();
         s.Nhap();
     }
@@ -128,7 +124,7 @@ import java.util.Scanner;
     
     public void Xuat()
     {
-        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n","Ma sach","Ten sach","Tac gia","Nha xuat ban","Tinh trang sach","The loai");
+        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n","Ma sach", "Ten sach", "Tac gia", "Nha xuat ban", "Tinh trang sach", "The loai");
         System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n",this.maSach,this.tenSach,this.tenTacGia,this.nhaXB,this.tinhtrang,this.theloai);
     }
 

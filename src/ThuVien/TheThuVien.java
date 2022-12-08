@@ -18,7 +18,7 @@ public class TheThuVien extends DocGia {
         this.ngaybatdau=null;
         this.ngayketthuc=null;
     }
-    public TheThuVien(String MaDocGia,String hoten, String ngaysinh,String email, String dc, String dienthoai,String gioitinh,String SoThe,String ngaybatdau,String ngayketthuc)
+    public TheThuVien(String MaDocGia, String hoten, String ngaysinh, String email, String dc, String dienthoai, String gioitinh, String SoThe, String ngaybatdau, String ngayketthuc)
     {
         super(MaDocGia,hoten,ngaysinh,email,dc,dienthoai,gioitinh);
         this.SoThe=SoThe;
@@ -53,18 +53,17 @@ public class TheThuVien extends DocGia {
     public void Nhap()
     {
         super.Nhap();
-        System.out.println("Nhap vao so the:");
+        System.out.println("Nhap vao so the: ");
         SoThe=sc.nextLine();
-        System.out.println("Ngay bat dau nhan the:");
+        System.out.println("Ngay bat dau nhan the: ");
         ngaybatdau=sc.nextLine();
-        System.out.println("Ngay ket thuc tra the:");
+        System.out.println("Ngay ket thuc tra the: ");
         ngayketthuc=sc.nextLine();
     }
     @Override 
     public void Xuat()
     {
-        System.out.printf("[%-20s][%-20s][%-20s][%-25s][%-20s][%-20s][%-20s][%-20s][%-20s][%-20s]\n","Ma doc gia","Ho ten","Ngay sinh","Email","Dia chi","Dien thoai","Gioi tinh","So the", "Ngay bat dau" , "Ngay ket thuc"  );
+        System.out.printf("[%-20s][%-20s][%-20s][%-25s][%-20s][%-20s][%-20s][%-20s][%-20s][%-20s]\n","Ma doc gia", "Ho ten", "Ngay sinh", "Email", "Dia chi", "Dien thoai", "Gioi tinh", "So the", "Ngay bat dau" , "Ngay ket thuc"  );
         System.out.printf("[%-20s][%-20s][%-20s][%-25s][%-20s][%-20s][%-20s][%-20s][%-20s][%-20s]\n",this.MaDocGia,this.hoten,this.ngaysinh,this.email,this.dc,this.dienthoai,this.gioitinh,this.SoThe , this.ngaybatdau , this.ngayketthuc );
     }
-  
 }

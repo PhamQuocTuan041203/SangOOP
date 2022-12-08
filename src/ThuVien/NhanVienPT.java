@@ -33,7 +33,7 @@ public class NhanVienPT extends NhanVien {
 	@Override
 	public void nhap() {
 		super.nhap();
-		System.out.print("Nhập số giờ làm việc của nhân viên: ");
+		System.out.print("Nhap so gio lam viec cua nhan vien: ");
 		giolamviec = Integer.parseInt(sc.nextLine());
 	}
 

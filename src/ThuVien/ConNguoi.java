@@ -80,17 +80,17 @@ public class ConNguoi {
     }
 
     public void Nhap() {
-        System.out.println("Nhap ho ten:");
+        System.out.println("Nhap ho ten: ");
         this.hoten = inp.nextLine();
-        System.out.println("Nhap ngay sinh:");
+        System.out.println("Nhap ngay sinh: ");
         this.ngaysinh = inp.nextLine();
-        System.out.println("Nhap email");
+        System.out.println("Nhap email: ");
         this.email = inp.nextLine();
-        System.out.println("Nhap vao dia chi");
+        System.out.println("Nhap dia chi: ");
         dc = inp.nextLine();
-        System.out.println("Nhap dien thoai:");
+        System.out.println("Nhap dien thoai: ");
         this.dienthoai = inp.nextLine();
-        System.out.println("Gioi tinh cua ban la:");
+        System.out.println("Gioi tinh: ");
         this.gioitinh = inp.nextLine();
     }
 

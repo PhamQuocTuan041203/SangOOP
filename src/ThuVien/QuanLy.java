@@ -33,16 +33,16 @@ public class QuanLy extends NhanVien {
         hesotrachnhiem=sc.nextDouble();
     }
     @Override  
-         public void Xuat()
+        public void Xuat()
     {
-        System.out.printf("%-15s%-15s%-20s%-20s%-20s%-20s\n","Ma nhan vien", "Ho ten" , "Luong co ban" ,"He so luong","He so trach nhiem" , "Luong chinh thuc");
+        System.out.printf("%-15s%-15s%-20s%-20s%-20s%-20s\n","Ma nhan vien", "Ten nhan vien" , "Luong co ban" ,"He so luong", "He so trach nhiem" , "Luong chinh thuc");
         System.out.printf("%-15s%-20s%-20s%-15s%-15s%-15s\n",this.MaNV , this.hoten , this.luongcb , this.hesoluong,this.hesotrachnhiem , this.luong);
     }    
-     @Override
-     public double tinhluong()
-     {
+    @Override
+    public double tinhluong()
+    {
         this.luong=this.luongcb*this.hesotrachnhiem;
         return this.luong;
-     }
-   }
+    }
+    }
 

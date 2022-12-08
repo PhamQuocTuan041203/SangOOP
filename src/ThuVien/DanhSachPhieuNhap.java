@@ -30,11 +30,11 @@ public class DanhSachPhieuNhap {
 	}
 
 	public void nhapds() {
-		System.out.println("Nhap vao so phieu nhap:");
+		System.out.println("Nhap vao so phieu nhap: ");
 		n = Integer.parseInt(sc.nextLine());
 		DanhSachPhieuNhap = new PhieuNhapSach[n];
 		for (int i = 0; i < n; i++) {
-			System.out.println("Nhap vao phieu nhap thu :" + (i + 1));
+			System.out.println("Nhap vao phieu nhap thu: " + (i + 1));
 			DanhSachPhieuNhap[i] = new PhieuNhapSach();
 			DanhSachPhieuNhap[i].Nhap();
 		}
@@ -42,13 +42,13 @@ public class DanhSachPhieuNhap {
 
 	public void Xuat() {
 		for (int i = 0; i < n; i++) {
-			System.out.println("\nThong tin phieu nhap");
+			System.out.println("\nThong tin phieu nhap: ");
 			DanhSachPhieuNhap[i].Xuat();
 		}
 	}
 
 	public void xoapn() {
-		System.out.println("Nhap ma phieu nhap can xoa:");
+		System.out.println("Nhap ma phieu nhap can xoa: ");
 		String xoas = sc.nextLine();
 		for (int i = 0; i < DanhSachPhieuNhap.length; i++) {
 			if (DanhSachPhieuNhap[i].getMaPhieuNhap().equalsIgnoreCase(xoas)) {
@@ -62,7 +62,7 @@ public class DanhSachPhieuNhap {
 	}
 
 	public void timkiempn() {
-		System.out.println("Nhap vao phieu nhap can tim:");
+		System.out.println("Nhap vao phieu nhap can tim: ");
 		String tims = sc.nextLine();
 		for (int i = 0; i < DanhSachPhieuNhap.length; i++) {
 			if (DanhSachPhieuNhap[i].getMaPhieuNhap().equalsIgnoreCase(tims)) {

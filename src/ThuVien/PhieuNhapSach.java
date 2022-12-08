@@ -64,11 +64,11 @@ public class PhieuNhapSach {
 
 	public void Nhap() {
 		setNgayNhapHang();
-		System.out.println("Ma phieu nhap:");
+		System.out.println("Ma phieu nhap: ");
 		MaPhieuNhap = sc.nextLine();
-		System.out.println("Ten nhan vien dang nhap:");
+		System.out.println("Ten nhan vien dang nhap: ");
 		TenNV = sc.nextLine();
-		System.out.println("Tong tien la :");
+		System.out.println("Tong tien la: ");
 		TongTien = Double.parseDouble(sc.nextLine());
 	}
 

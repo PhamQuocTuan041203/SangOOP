@@ -15,7 +15,7 @@ public class CheckLoi {
             if (DauVao != null) {
                 return DauVao;
             } else {
-                System.out.print("Khong duoc bo trong!! Moi nhap lai: ");
+                System.out.print("Khong duoc bo trong! Moi nhap lai: ");
             }
         }
     }
@@ -46,7 +46,7 @@ public class CheckLoi {
             if (DauVao.matches("DG" + "[0-9]{1,2}")) {
                 return DauVao;
             } else {
-                System.out.println("Dinh dang ma doc gia: DG_. Ví dụ: DG01");
+                System.out.println("Dinh dang ma doc gia: DG.. Ví dụ: DG01");
             }
         }
     }
@@ -81,7 +81,7 @@ public class CheckLoi {
                 DauVao = Integer.parseInt(scanner.nextLine());
                 return DauVao;
             } catch (NumberFormatException exception) {
-                System.out.print("Sai kiểu dữ liệu ! Nhập lại: ");
+                System.out.print("Sai kieu du lieu! Moi nhap lai: ");
             }
         }
     }
@@ -93,7 +93,7 @@ public class CheckLoi {
             if (DauVao > 0) {
                 return DauVao;
             } else {
-                System.out.print("Số nhập vào không được nh�? hơn 0 ! M�?i nhập lại: ");
+                System.out.print("Du lieu nhap vao khong duoc nho hon '0'! Moi nhap lai: ");
             }
         }
     }
@@ -116,7 +116,7 @@ public class CheckLoi {
             if (DauVao.matches(DinhDang)) {
                 return DauVao;
             } else {
-                System.out.print("Sai dinh dang ! Moi nhap lai: ");
+                System.out.print("Sai dinh dang! Moi nhap lai: ");
             }
         }
     }

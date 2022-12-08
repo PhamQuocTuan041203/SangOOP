@@ -37,7 +37,7 @@ public class DanhSachNhanVien {
 	}
 
 	public void xoanv() {
-		System.out.print("Nhập Mã_Nv nhân viên muốn xóa: ");
+		System.out.print("Nhap ma nhan vien muon xoa: ");
 		String xoanv = sc.nextLine();
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			if (DanhSachNhanVien[i].getMaNV().equalsIgnoreCase(xoanv)) {
@@ -51,7 +51,7 @@ public class DanhSachNhanVien {
 	}
 
 	public void timkiemnv() {
-		System.out.print("Nhập Mã_NV nhân viên muốn tìm: ");
+		System.out.print("Nhap ma nhan vien muon tim: ");
 		String timnv = sc.nextLine();
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			if (DanhSachNhanVien[i].getMaNV().equalsIgnoreCase(timnv)) {
@@ -61,7 +61,7 @@ public class DanhSachNhanVien {
 	}
 
 	public void themnv() {
-		System.out.println("Nhập thông tin nhân viên muốn thêm");
+		System.out.println("Nhap ma nhan vien muon them: ");
 		NhanVienPT nv = new NhanVienPT();
 		nv.nhap();
 		DanhSachNhanVien = Arrays.copyOf(DanhSachNhanVien, DanhSachNhanVien.length + 1);
@@ -84,16 +84,14 @@ public class DanhSachNhanVien {
 	public void QuanLyNhanVien() {
 		String lc;
 		while (true) {
-			System.out.println("====== Danh Sach Quan Ly Nhan Vien ======");
-			System.out.println("|||                                   |||");
-			System.out.println("|||\t1. Them nhan vien                 |||");
-			System.out.println("|||\t2. Xoa nhan vien                  |||");
-			System.out.println("|||\t3. Tim kiem nhan vien             |||");
-			System.out.println("|||\t4. Xem danh sach nhan vien        |||");
-			System.out.println("|||\t0. Return                        |||");
-			System.out.println("0. Return");
-			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
-			System.out.print("Your choosen: ");
+			System.out.println("\n\n================ QUAN LI NHAN VIEN ===============");
+			System.out.println("1. Them nhan vien");
+			System.out.println("2. Xoa nhan vien");
+			System.out.println("3. Tim kiem nhan vien");
+			System.out.println("4. Xem danh sach nhan vien");
+			System.out.println("0. Tro ve");
+			System.out.println("==================================================");
+			System.out.print("Nhap lua chon cua ban: ");
 			lc = sc.nextLine();
 
 			switch (lc) {

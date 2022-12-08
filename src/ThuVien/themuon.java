@@ -6,7 +6,7 @@ package ThuVien;
 
 import java.util.Scanner;
 public class themuon {
-  
+
     protected String maMuon;
     protected String maKhach;
     protected String maSach;
@@ -33,7 +33,7 @@ public class themuon {
     }
     public void setMaMuon()
     {
-        System.out.println("Nhap the muon:");
+        System.out.println("Nhap the muon: ");
         maMuon=sc.nextLine();
     }
     
@@ -63,7 +63,7 @@ public class themuon {
     }
     public void setNgayMuon()
     {
-        System.out.println("Ngay muon:");
+        System.out.println("Ngay muon: ");
         ngayMuon=sc.nextLine();
     }
     public String getHanTra() {
@@ -74,26 +74,26 @@ public class themuon {
     }
     public void setHanTra()
     {
-        System.out.println("Ngay tra:");
+        System.out.println("Ngay tra: ");
         hanTra=sc.nextLine();
     }
     
     public void Nhap(){
-        System.out.println("Nhap ma muon");
+        System.out.println("Nhap ma muon: ");
         maMuon=sc.nextLine();
-        System.out.println("Nhap ma khach hang:");
+        System.out.println("Nhap ma khach hang: ");
         maKhach=sc.nextLine();
-        System.out.println("Nhap ma sach:");
+        System.out.println("Nhap ma sach: ");
         maMuon=sc.nextLine();
-        System.out.println("Nhap ngay muon(dd--mm--yy):");
+        System.out.println("Nhap ngay muon(dd/mm/yyyy): ");
         ngayMuon=sc.nextLine();
-        System.out.println("Nhap ngay tra(dd-mm-yy)");
+        System.out.println("Nhap ngay tra(dd/mm/yyyy): ");
         hanTra=sc.nextLine();
     }
     
     
     public void Xuat(){
-        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s]\n","Ma muon","Ma khach hang","Ma sach","Ngay muon","Hen tra");
+        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s]\n","Ma muon", "Ma khach hang", "Ma sach", "Ngay muon", "Hen tra");
         System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s]\n",this.maMuon,this.maKhach,this.maSach,this.ngayMuon,this.hanTra);
     }
     
