@@ -53,7 +53,6 @@ public class Menu {
 
 	public void DangNhap() {
 		int chon;
-		DanhSachAdmin();
 		while (true) {
 			String user, pass;
 			System.out.print("\nAccount: ");
@@ -131,9 +130,9 @@ public class Menu {
 			System.out.println("2. Thong ke sach Giao Khoa");
 			System.out.println("3. Thong ke tat ca sach");
 			System.out.println("4. Tim kiem sach");
-			System.out.println("7. Xuat danh sach the muon");
+			System.out.println("5. Xuat danh sach the muon");
 			System.out.println("6. Nguoi dung muon sach");
-			System.out.println("8. Nguoi dung tra sach");
+			System.out.println("7. Nguoi dung tra sach");
 			System.out.println("0. Tro ve");
 			System.out.println("==================================================");
 			System.out.print("Nhap lua chon cua ban: ");
@@ -154,14 +153,15 @@ public class Menu {
 				case "4":
 					DanhSachSach.timkiemsach();
 					break;
+				case "5":
+					DanhSachTheMuon.xuatthemuon();
+					break;
 				case "6":
 					MuonSach();
 					ChoMuonSach();
 					break;
-				case "7":
-					DanhSachTheMuon.xuatthemuon();
-					break;
 				case "8":
+					System.out.println("He thong bao tri roi deo xai dc :v");
 					TraSach();
 					break;
 
@@ -218,7 +218,7 @@ public class Menu {
 	public void MuonSach() {
 		do {
 			DanhSachSach.xuatds();
-			System.out.println("Nhap ma sach muon muon\nNhập 0 de tiep tuc");
+			System.out.println("Nhap ma sach muon muon\nNhap 0 de tiep tuc");
 			System.out.print("Nhap lua chon cua ban: ");
 			String MaSach = sc.nextLine();
 			if (MaSach.charAt(0) == '0') {
@@ -271,7 +271,7 @@ public class Menu {
 		for (int i = 0; i < DanhSachTheMuon.getN(); i++) {
 			if (DanhSachTheMuon.GetTheMuon(i).getMaKhach().equals(MaDocGia))
 				if (!check.CheckNgayTra1(DanhSachTheMuon.GetTheMuon(i).getHanTra(), NgayTra)) {
-					System.out.println("Xu phat!!!!");
+					System.out.println("Xu phat!");
 					HeThongXuPhat xlvp = new XuLyViPham();
 					System.out.println("Moi nop phat: " + xlvp.getXuphat());
 				}
