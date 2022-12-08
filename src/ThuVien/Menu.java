@@ -53,7 +53,6 @@ public class Menu {
 
 	public void DangNhap() {
 		int chon;
-		DanhSachAdmin();
 		while (true) {
 			String user, pass;
 			System.out.print("\nAccount: ");
@@ -82,12 +81,12 @@ public class Menu {
 	public void DanhSachAdmin() {
 		String lc;
 		while (true) {
-			System.out.println("\n!======== ADMIN ========!");
-			System.out.println("1. Management NHAN_VIEN");
+			System.out.println("\n!======== ADMIN ========! (chỉnh rồi)");
+			System.out.println("\n1. Management NHAN_VIEN");
 			System.out.println("2. Management BOOKS");
 			System.out.println("3. Management LIBRARY CARD");
 			System.out.println("4. List LIBRARY CARD");
-			System.out.println("5. Management PHIEU_NHAP");
+			System.out.println("5. Management PHIEU_NHAP (chưa xong)");
 			System.out.println("0. Return");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
 			System.out.print("Your choosen: ");

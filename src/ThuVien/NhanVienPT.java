@@ -33,14 +33,12 @@ public class NhanVienPT extends NhanVien {
 	@Override
 	public void nhap() {
 		super.nhap();
-		System.out.println("Nhap vao gio lam viec cua nhan vien PT:");
+		System.out.print("Nhập số giờ làm việc của nhân viên: ");
 		giolamviec = Integer.parseInt(sc.nextLine());
 	}
 
 	@Override
 	public void Xuat() {
-		System.out.printf("%-15s%-15s%-20s%-20s%-15s%-20s\n", "Ma nhan vien", "Ho ten", "Luong co ban", "He so luong",
-				"Gio lam viec", "Luong chinh thuc");
 		System.out.printf("%-15s%-20s%-20s%-15s%-15s%-15s\n", this.MaNV, this.hoten, this.luongcb, this.hesoluong,
 				this.giolamviec, this.luong);
 	}
