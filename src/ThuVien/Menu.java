@@ -53,6 +53,7 @@ public class Menu {
 
 	public void DangNhap() {
 		int chon;
+		DanhSachAdmin();
 		while (true) {
 			String user, pass;
 			System.out.print("\nAccount: ");
@@ -81,7 +82,7 @@ public class Menu {
 	public void DanhSachAdmin() {
 		String lc;
 		while (true) {
-			System.out.println("\n!======== ADMIN ========! (chỉnh rồi)");
+			System.out.println("\n!======== ADMIN ========!");
 			System.out.println("\n1. Management NHAN_VIEN");
 			System.out.println("2. Management BOOKS");
 			System.out.println("3. Management LIBRARY CARD");
@@ -130,9 +131,8 @@ public class Menu {
 			System.out.println("2.Thong ke sach Giao Khoa");
 			System.out.println("3.Thong ke tat ca sach");
 			System.out.println("4.Tim kiem sach");
-			System.out.println("5.Nhap vao sach muon muon");
-			System.out.println("6.Nguoi dung muon sach");
 			System.out.println("7.Xuat danh sach the muon");
+			System.out.println("6.Nguoi dung muon sach");
 			System.out.println("8.Nguoi dung tra sach");
 			System.out.println("0. Return");
 			System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -154,10 +154,8 @@ public class Menu {
 				case "4":
 					DanhSachSach.timkiemsach();
 					break;
-				case "5":
-					MuonSach();
-					break;
 				case "6":
+					MuonSach();
 					ChoMuonSach();
 					break;
 				case "7":
@@ -220,7 +218,8 @@ public class Menu {
 	public void MuonSach() {
 		do {
 			DanhSachSach.xuatds();
-			System.out.println("Nhap vao sach muon muon hoac nhan 0 de thoat");
+			System.out.println("Nhập vào Mã sách muốn mượn\nNhập 0 để tiep tuc");
+			System.out.print("Lựa chọn: ");
 			String MaSach = sc.nextLine();
 			if (MaSach.charAt(0) == '0') {
 				break;
@@ -270,13 +269,12 @@ public class Menu {
 		String NgayTra = sc.nextLine();
 
 		for (int i = 0; i < DanhSachTheMuon.getN(); i++) {
-			if (DanhSachTheMuon.GetTheMuon(i).getMaKhach().equals(MaDocGia)) {
+			if (DanhSachTheMuon.GetTheMuon(i).getMaKhach().equals(MaDocGia))
 				if (!check.CheckNgayTra1(DanhSachTheMuon.GetTheMuon(i).getHanTra(), NgayTra)) {
 					System.out.println("Xu phat!!!!");
 					HeThongXuPhat xlvp = new XuLyViPham();
 					System.out.println("Moi nop phat:" + xlvp.getXuphat());
 				}
-			}
 		}
 	}
 

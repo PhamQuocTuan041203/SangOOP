@@ -35,15 +35,7 @@ public class DanhSachTheThuVien {
     {
         return arrt[i];
     }
-    public void nhapsan()// nhap san vao ke sach
-    {
-        n = 4;
-        arrt = new TheThuVien[n];
-        arrt[0] = new TheThuVien("DG01","Dang Duy Van","1/1/2002","dangduyvan@gmail.com","Sai Gon","0909123456","Nam","THE01","1/12/2021","31/12/2021");
-        arrt[1] = new TheThuVien("DG02","Pham Hao Vinh","2/1/2002","phamhaovinh@gmail.com","Sai Gon","0909654321","Nam","THE02","1/12/2021","31/12/2021");
-        arrt[2] = new TheThuVien("DG03","Huynh Tu Tuan","3/1/2002","huynhtutuan@gmail.com","Sai Gon","0121596389","Nam","THE03","1/12/2021","31/12/2021");
-        arrt[3] = new TheThuVien("DG04","Nguyen Minh Tri","4/1/2002","ngnminhtri@gmail.com","Sai Gon","0122363983","Nam","THE04","1/12/2021","31/12/2021");
-    }
+    
 
     public void nhapds() {
         System.out.println("Nhap vao so luong the:");

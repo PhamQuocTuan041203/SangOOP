@@ -40,7 +40,6 @@ public class CheckLoi {
 
     public String KiemTraNhapMaDocGia() {
         String DauVao;
-
         while (true) {
             DauVao = scanner.nextLine();
             DauVao = DauVao.toUpperCase();
@@ -54,7 +53,6 @@ public class CheckLoi {
 
     public String KiemTraNhapTen() {
         String DauVao;
-        
         while (true) {
             DauVao = scanner.nextLine();
             if (DauVao.matches("[\\pL\\pMn*\\s*]+")) {
@@ -122,4 +120,5 @@ public class CheckLoi {
             }
         }
     }
+
 }

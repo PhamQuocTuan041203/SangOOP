@@ -35,7 +35,6 @@ public class DanhSachPhieuNhap {
 		DanhSachPhieuNhap = new PhieuNhapSach[n];
 		for (int i = 0; i < n; i++) {
 			System.out.println("Nhap vao phieu nhap thu :" + (i + 1));
-			PhieuNhapSach a = new PhieuNhapSach();
 			DanhSachPhieuNhap[i] = new PhieuNhapSach();
 			DanhSachPhieuNhap[i].Nhap();
 		}

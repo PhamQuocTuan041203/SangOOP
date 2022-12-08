@@ -4,10 +4,13 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class BookList {
+
     private int n;
     private Sach[] DanhSachSach;
+
     private final Scanner sc = new Scanner(System.in);
-    private final CheckLoi check=new CheckLoi();
+    private final CheckLoi check = new CheckLoi();
+
     public BookList() {
         DanhSachSach = null;
         n = 0;
@@ -37,61 +40,57 @@ public class BookList {
             DanhSachSach[i].Nhap();
         }
     }
-    
-    public void KhoiTaoDanhSach()
-    {
-        n=6;
-        DanhSachSach = new Sach[6];
-        DanhSachSach[0] = new Sach("DMPLK", "De men phieu luu ky", "To Hoai", "Kim Dong", "Tot");
-        DanhSachSach[1] = new Sach("CNTT", "Cong nghe thong tin", "Khong co", "Fahasa", "Tot");
-        DanhSachSach[2] = new SachGiaoKhoa("NV12", "Ngu Van 12","Tuan", "Kim Dong", "Tot");
-        DanhSachSach[3] = new SachGiaoKhoa("T12", "Toan 12", "Tuan", "Kim Dong", "Tot");
-        DanhSachSach[4] = new SachVietNam("VN01","Bi an dai duong","Khong co","Kim Dong","Tot");
-        DanhSachSach[5] = new SachVietNam("VN02","Tro choi dan gian","Khong co","Kim Dong","Tot");
-
-    }
 
     public void xuatds() {
 
-        System.out.println("+-------------------------------------------------------------------------------------------------------+");
-        System.out.println("+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
+        System.out.println(
+                "+-------------------------------------------------------------------------------------------------------+");
+        System.out.println(
+                "+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
 
         for (int i = 0; i < DanhSachSach.length; i++) {
             DanhSachSach[i].Xuat();
-            System.out.println("|____________________________________________________________________________________________________|");
+            System.out.println(
+                    "|____________________________________________________________________________________________________|");
         }
-        System.out.println("+-------------------------------------------------------------------------------------------------------+");
+        System.out.println(
+                "+-------------------------------------------------------------------------------------------------------+");
     }
-    
-    public void xuatdssgk()
-    {
-        System.out.println("+-------------------------------------------------------------------------------------------------------+");
-        System.out.println("+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
-        
-        for(int i = 0; i < DanhSachSach.length; i++) {
-            if(DanhSachSach[i] instanceof SachGiaoKhoa)
-            {
+
+    public void xuatdssgk() {
+        System.out.println(
+                "+-------------------------------------------------------------------------------------------------------+");
+        System.out.println(
+                "+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
+
+        for (int i = 0; i < DanhSachSach.length; i++) {
+            if (DanhSachSach[i] instanceof SachGiaoKhoa) {
                 DanhSachSach[i].Xuat();
-                System.out.println("|____________________________________________________________________________________________________|");
+                System.out.println(
+                        "|____________________________________________________________________________________________________|");
             }
         }
-        System.out.println("+-------------------------------------------------------------------------------------------------------+");
+        System.out.println(
+                "+-------------------------------------------------------------------------------------------------------+");
     }
-    public void xuatdssvn()
-    {
-        System.out.println("+-------------------------------------------------------------------------------------------------------+");
-        System.out.println("+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
-        
-        for(int i = 0; i < DanhSachSach.length; i++) {
-            if(DanhSachSach[i] instanceof SachVietNam)
-            {
+
+    public void xuatdssvn() {
+        System.out.println(
+                "+-------------------------------------------------------------------------------------------------------+");
+        System.out.println(
+                "+-----------------------------------(Danh sach cac sach)------------------------------------------------+:");
+
+        for (int i = 0; i < DanhSachSach.length; i++) {
+            if (DanhSachSach[i] instanceof SachVietNam) {
                 DanhSachSach[i].Xuat();
-                System.out.println("|____________________________________________________________________________________________________|");
+                System.out.println(
+                        "|____________________________________________________________________________________________________|");
             }
         }
-        System.out.println("+-------------------------------------------------------------------------------------------------------+");
+        System.out.println(
+                "+-------------------------------------------------------------------------------------------------------+");
     }
-    
+
     public void nhapthemsach() {
         System.out.println("Nhap them thong tin sach:");
         Sach s = new Sach();
@@ -115,7 +114,7 @@ public class BookList {
         }
     }
 
-        public void timkiemsach() {
+    public void timkiemsach() {
         System.out.println("Nhap vao sach can tim:");
         String tims = sc.nextLine();
         for (int i = 0; i < DanhSachSach.length; i++) {
@@ -124,28 +123,23 @@ public class BookList {
             }
         }
     }
-    
-    public void NhapDanhSach(Sach sach)
-    {
-        if(n==0)
-        {
-            DanhSachSach=new Sach[1];
-            DanhSachSach[n]=sach;
+
+    public void NhapDanhSach(Sach sach) {
+        if (n == 0) {
+            DanhSachSach = new Sach[1];
+            DanhSachSach[n] = sach;
             n++;
-        }
-        else
-        {
-            DanhSachSach=Arrays.copyOf(DanhSachSach, n+1);
-            DanhSachSach[n]=sach;
+        } else {
+            DanhSachSach = Arrays.copyOf(DanhSachSach, n + 1);
+            DanhSachSach[n] = sach;
             n++;
         }
     }
-    
-    public void NhapSachMoi()
-    {
+
+    public void NhapSachMoi() {
         int chon;
-        do{
-            Sach sach=null;
+        do {
+            Sach sach = null;
             System.out.println("!--------------------------------!");
             System.out.println("=============Danh Sach============");
             System.out.println("!--------------------------------!");
@@ -155,41 +149,35 @@ public class BookList {
             System.out.println("|||   0.Thoat                  |||");
             System.out.println("==================================");
             System.out.println("Nhap vao sach ban muon them:");
-            chon=check.KiemTraNhapSoNguyen();
-            switch(chon)
-            {
+            chon = check.KiemTraNhapSoNguyen();
+            switch (chon) {
                 case 0:
                     break;
                 case 1:
-                    sach=new SachVietNam();
+                    sach = new SachVietNam();
                     sach.Nhap();
                     break;
                 case 2:
-                    sach=new SachGiaoKhoa();
+                    sach = new SachGiaoKhoa();
                     sach.Nhap();
                     break;
-                case 3 :
+                case 3:
                     sach = new Sach();
                     sach.Nhap();
-               // default:
-                   // System.out.println("Nhap vao khong hop le!!!");
-                    //break;
             }
-            if(sach!=null)
-            {
-                DanhSachSach=Arrays.copyOf(DanhSachSach, DanhSachSach.length+1);
-                DanhSachSach[n]=sach;
+            if (sach != null) {
+                DanhSachSach = Arrays.copyOf(DanhSachSach, DanhSachSach.length + 1);
+                DanhSachSach[n] = sach;
                 n++;
                 System.out.println("Nhap thanh cong!!!");
             }
-        }while(chon!=0);
+        } while (chon != 0);
     }
-    
-    public void QuanLySach()
-    {
+
+    public void QuanLySach() {
         System.out.printf("\n");
         int chon;
-        do{
+        do {
             System.out.println("=================== Danh Sach Sach ===================");
             System.out.println("|||\t1.Them sach moi                            |||");
             System.out.println("|||\t2.Xoa sach                                 |||");
@@ -200,9 +188,8 @@ public class BookList {
             System.out.println("|||\t0.Thoat                                    |||");
             System.out.println("===========================================================");
             System.out.println("---Nhap vao chuc nang:");
-            chon=check.KiemTraNhapSoNguyen();
-            switch(chon)
-            {
+            chon = check.KiemTraNhapSoNguyen();
+            switch (chon) {
                 case 0:
                     break;
                 case 1:
@@ -227,11 +214,11 @@ public class BookList {
                     System.out.println("Nhap vao khong hop le!!!");
                     break;
             }
-        }while(chon!=0);
+        } while (chon != 0);
     }
-    public Sach getSach(int i)
-    {
+
+    public Sach getSach(int i) {
         return DanhSachSach[i];
     }
-  
+
 }
