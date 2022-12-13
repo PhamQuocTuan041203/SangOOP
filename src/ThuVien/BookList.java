@@ -42,40 +42,31 @@ public class BookList {
     }
 
     public void xuatds() {
-        System.out.println(
-                "=============== DANH SACH CAC SACH ===============");
-
+        System.out.println("========== DANH SACH CAC SACH ==========");
         for (int i = 0; i < DanhSachSach.length; i++) {
             DanhSachSach[i].Xuat();
             System.out.println("==================================================");
         }
-        System.out.println("==================================================");
     }
 
     public void xuatdssgk() {
-        System.out.println("==================================================");
         System.out.println("=============== DANH SACH CAC SACH ===============");
-
         for (int i = 0; i < DanhSachSach.length; i++) {
             if (DanhSachSach[i] instanceof SachGiaoKhoa) {
                 DanhSachSach[i].Xuat();
                 System.out.println("==================================================");
             }
         }
-        System.out.println("==================================================");
     }
 
     public void xuatdssvn() {
-        System.out.println("==================================================");
         System.out.println("=============== DANH SACH CAC SACH ===============");
-
         for (int i = 0; i < DanhSachSach.length; i++) {
             if (DanhSachSach[i] instanceof SachVietNam) {
                 DanhSachSach[i].Xuat();
                 System.out.println("==================================================");
             }
         }
-        System.out.println("==================================================");
     }
 
     public void nhapthemsach() {

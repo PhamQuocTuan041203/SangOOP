@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class DanhSachSGK {
+
 	private int n;
 	private SachGiaoKhoa[] arrsgk;
 
@@ -32,15 +33,11 @@ public class DanhSachSGK {
 	}
 
 	public void xuatds() {
-
-		System.out.println("==================================================");
 		System.out.println("=============== DANH SACH CAC SACH ===============");
-
 		for (int i = 0; i < arrsgk.length; i++) {
 			arrsgk[i].Xuat();
 			System.out.println("==================================================");
 		}
-		System.out.println("==================================================");
 	}
 
 	public void nhapthemsach() {
@@ -87,5 +84,5 @@ public class DanhSachSGK {
 			n++;
 		}
 	}
-	
+
 }

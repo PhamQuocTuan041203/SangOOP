@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ThuVien;
 
 import java.util.Scanner;
@@ -9,10 +5,11 @@ import java.util.Arrays;
 
 public class DanhSachTheThuVien {
 
-    private final Scanner sc = new Scanner(System.in);
-    private CheckLoi check=new CheckLoi();
+    private CheckLoi check = new CheckLoi();
     private int n;
     private TheThuVien[] arrt;
+
+    private final Scanner sc = new Scanner(System.in);
 
     public DanhSachTheThuVien() {
         arrt = null;
@@ -31,11 +28,10 @@ public class DanhSachTheThuVien {
         this.n = n;
         this.arrt = arrt;
     }
-    public TheThuVien getThe(int i)
-    {
+
+    public TheThuVien getThe(int i) {
         return arrt[i];
     }
-    
 
     public void nhapds() {
         System.out.println("Nhap vao so luong the: ");
@@ -50,15 +46,12 @@ public class DanhSachTheThuVien {
     }
 
     public void xuatds() {
-
-        System.out.println("+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+");
-        System.out.println("+---------------------------------(Danh sach cac the duoc muon)----------------------------------------------+:");
-
+        System.out.println("=== The Thu Vien ===");
         for (int i = 0; i < arrt.length; i++) {
             arrt[i].Xuat();
-            System.out.println("|____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|");
+            System.out.println(
+                    "|____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|");
         }
-        System.out.println("+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+");
     }
 
     public void nhapthemthe() {
@@ -70,7 +63,7 @@ public class DanhSachTheThuVien {
         n++;
     }
 
-public void xoathe() {
+    public void xoathe() {
         System.out.println("Nhap ma the can xoa: ");
         String xoathe = sc.nextLine();
         for (int i = 0; i < arrt.length; i++) {
@@ -93,26 +86,23 @@ public void xoathe() {
             }
         }
     }
-    public void NhapDanhSachTheThuVien(TheThuVien the)
-    {
-        if(n==0)
-        {
-            arrt=new TheThuVien[1];
-            arrt[n]=the;
+
+    public void NhapDanhSachTheThuVien(TheThuVien the) {
+        if (n == 0) {
+            arrt = new TheThuVien[1];
+            arrt[n] = the;
             n++;
-        }
-        else
-        {
-            arrt=Arrays.copyOf(arrt, n+1);
-            arrt[n]=the;
+        } else {
+            arrt = Arrays.copyOf(arrt, n + 1);
+            arrt[n] = the;
             n++;
         }
     }
-public void QuanLyTheThuVien()
-    {
+
+    public void QuanLyTheThuVien() {
         System.out.printf("\n");
         int chon;
-        do{
+        do {
             System.out.println("============== QUAN LI THE THU VIEN ==============");
             System.out.println("\t1. Them the thu vien");
             System.out.println("\t2. Xoa the thu vien");
@@ -121,9 +111,8 @@ public void QuanLyTheThuVien()
             System.out.println("\t0. Thoat");
             System.out.println("==================================================");
             System.out.println("Your choosen: ");
-            chon=check.KiemTraNhapSoNguyen();
-            switch(chon)
-            {
+            chon = check.KiemTraNhapSoNguyen();
+            switch (chon) {
                 case 0:
                     break;
                 case 1:
@@ -142,6 +131,6 @@ public void QuanLyTheThuVien()
                     System.out.println("Nhap vao khong hop le!");
                     break;
             }
-        }while(chon!=0);
+        } while (chon != 0);
     }
 }

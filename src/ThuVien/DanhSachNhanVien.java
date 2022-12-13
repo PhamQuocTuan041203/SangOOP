@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class DanhSachNhanVien {
 
 	private int n;
-	private NhanVienPT[] DanhSachNhanVien;
+	private NhanVien[] DanhSachNhanVien;
 
 	private Scanner sc = new Scanner(System.in);
 
@@ -15,7 +15,7 @@ public class DanhSachNhanVien {
 		DanhSachNhanVien = null;
 	}
 
-	public DanhSachNhanVien(int n, NhanVienPT[] arrnv) {
+	public DanhSachNhanVien(int n, NhanVien[] arrnv) {
 		this.n = n;
 		this.DanhSachNhanVien = arrnv;
 	}
@@ -29,8 +29,8 @@ public class DanhSachNhanVien {
 	}
 
 	public void xuatds() {
-		System.out.printf("%-15s%-15s%-20s%-20s%-15s%-20s\n", "Ma nhan vien", "Ho ten", "Luong co ban", "He so luong",
-				"Gio lam viec", "Luong chinh thuc");
+		System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "\nMa nhan vien", "Ho ten", "Luong co ban", "He so luong",
+				"Luong chinh thuc");
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			DanhSachNhanVien[i].Xuat();
 		}
@@ -62,21 +62,21 @@ public class DanhSachNhanVien {
 
 	public void themnv() {
 		System.out.println("Nhap ma nhan vien muon them: ");
-		NhanVienPT nv = new NhanVienPT();
+		NhanVien nv = new NhanVien();
 		nv.nhap();
 		DanhSachNhanVien = Arrays.copyOf(DanhSachNhanVien, DanhSachNhanVien.length + 1);
 		DanhSachNhanVien[n] = nv;
 		n++;
 	}
 
-	public void NhapDanhSachNhanVien(NhanVienPT nv) {
+	public void NhapDanhSachNhanVien(NhanVien nv) {
 		if (n != 0) {
 			DanhSachNhanVien = Arrays.copyOf(DanhSachNhanVien, n + 1);
 			DanhSachNhanVien[n] = nv;
 			n++;
 		} else {
 			n = 1;
-			DanhSachNhanVien = new NhanVienPT[n];
+			DanhSachNhanVien = new NhanVien[n];
 			DanhSachNhanVien[0] = nv;
 		}
 	}

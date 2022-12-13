@@ -6,6 +6,32 @@ import java.io.FileReader;
 public class GhiVaDocFile implements File {
 
 	@Override
+	public void GhiDanhSachNhanVien(DanhSachNhanVien nv) {
+		// try {
+		// 	FileReader fr = new FileReader("D://DanhSachSach.txt");
+		// 	BufferedReader br = new BufferedReader(fr);
+		// 	String line;
+		// 	while (true) {
+		// 		line = br.readLine();
+		// 		if (line == null)
+		// 			break;
+		// 		String[] strArray = line.split(";");
+		// 		Sach s = new Sach();
+		// 		s.setMaSach(strArray[0]);
+		// 		s.setTenSach(strArray[1]);
+		// 		s.setTenTacGia(strArray[2]);
+		// 		s.setNhaXB(strArray[3]);
+		// 		s.setTinhtrang(strArray[4]);
+		// 		s.setTheloai(strArray[5]);
+		// 		sach.NhapDanhSach(s);
+		// 	}
+		// 	fr.close();
+		// } catch (Exception e) {
+		// 	System.out.println(e);
+		// }
+	}
+
+	@Override
 	public void DocDanhSachSach(BookList sach) {
 		try {
 			FileReader fr = new FileReader("D://DanhSachSach.txt");
@@ -150,12 +176,11 @@ public class GhiVaDocFile implements File {
 				if (line == null)
 					break;
 				String[] strArray = line.split(";");
-				NhanVienPT nv1 = new NhanVienPT();
+				NhanVien nv1 = new NhanVien();
 				nv1.setMaNV(strArray[0]);
 				nv1.setHoten(strArray[1]);
-				nv1.setLuong(Double.parseDouble(strArray[2]));
-				nv1.setLuongcb(Integer.parseInt(strArray[3]));
-				nv1.setHesoluong(Integer.parseInt(strArray[4]));
+				nv1.setLuongcb(Integer.parseInt(strArray[2]));
+				nv1.setHesoluong(Integer.parseInt(strArray[3]));
 				nv.NhapDanhSachNhanVien(nv1);
 			}
 			fr.close();
@@ -163,5 +188,5 @@ public class GhiVaDocFile implements File {
 			System.out.println(e);
 		}
 	}
-	
+
 }

@@ -132,7 +132,6 @@ public class Menu {
 			System.out.println("4. Tim kiem sach");
 			System.out.println("5. Xuat danh sach the muon");
 			System.out.println("6. Nguoi dung muon sach");
-			System.out.println("7. Nguoi dung tra sach");
 			System.out.println("0. Tro ve");
 			System.out.println("==================================================");
 			System.out.print("Nhap lua chon cua ban: ");
@@ -159,10 +158,6 @@ public class Menu {
 				case "6":
 					MuonSach();
 					ChoMuonSach();
-					break;
-				case "8":
-					System.out.println("He thong bao tri roi deo xai dc :v");
-					TraSach();
 					break;
 
 				default:

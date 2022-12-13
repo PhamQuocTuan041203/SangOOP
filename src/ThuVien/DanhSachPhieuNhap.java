@@ -7,6 +7,7 @@ public class DanhSachPhieuNhap {
 
 	private int n;
 	private PhieuNhapSach[] DanhSachPhieuNhap;
+	
 	private final Scanner sc = new Scanner(System.in);
 
 	private final CheckLoi check = new CheckLoi();

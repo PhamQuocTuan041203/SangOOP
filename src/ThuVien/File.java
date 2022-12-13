@@ -1,8 +1,4 @@
-
 package ThuVien;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 
 public interface File {
 
@@ -18,4 +14,5 @@ public interface File {
 
     public void DocDanhSachNhanVien(DanhSachNhanVien nv);
 
+    public void GhiDanhSachNhanVien(DanhSachNhanVien nv);
 }
