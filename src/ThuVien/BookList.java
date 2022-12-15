@@ -9,7 +9,6 @@ public class BookList {
     private Sach[] DanhSachSach;
 
     private final Scanner sc = new Scanner(System.in);
-    private final CheckLoi check = new CheckLoi();
 
     public BookList() {
         DanhSachSach = null;
@@ -42,29 +41,38 @@ public class BookList {
     }
 
     public void xuatds() {
-        System.out.println("========== DANH SACH CAC SACH ==========");
+        System.out.println("\n\n\t========================= DANH SACH CAC QUYEN SACH =========================\n");
+        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", "Ma sach", "Ten sach", "Tac gia",
+                "Nha xuat ban", "Tinh trang sach", "The loai");
+        System.out.println();
+
         for (int i = 0; i < DanhSachSach.length; i++) {
             DanhSachSach[i].Xuat();
-            System.out.println("==================================================");
         }
     }
 
     public void xuatdssgk() {
-        System.out.println("=============== DANH SACH CAC SACH ===============");
+        System.out.println("\n\n\t==================== DANH SACH SACH GIAO KHOA ====================\n");
+        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", "Ma sach", "Ten sach", "Tac gia",
+                "Nha xuat ban", "Tinh trang sach", "The loai");
+        System.out.println();
+
         for (int i = 0; i < DanhSachSach.length; i++) {
             if (DanhSachSach[i] instanceof SachGiaoKhoa) {
                 DanhSachSach[i].Xuat();
-                System.out.println("==================================================");
             }
         }
     }
 
     public void xuatdssvn() {
-        System.out.println("=============== DANH SACH CAC SACH ===============");
+        System.out.println("\n\n\t==================== DANH SACH SACH VIET NAM ====================\n");
+        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", "Ma sach", "Ten sach", "Tac gia",
+                "Nha xuat ban", "Tinh trang sach", "The loai");
+        System.out.println();
+
         for (int i = 0; i < DanhSachSach.length; i++) {
             if (DanhSachSach[i] instanceof SachVietNam) {
                 DanhSachSach[i].Xuat();
-                System.out.println("==================================================");
             }
         }
     }
@@ -79,8 +87,10 @@ public class BookList {
     }
 
     public void xoasach() {
-        System.out.println("Nhap ma sach can xoa: ");
+        int kt = 1;
+        System.out.print("Nhap Ma_Sach can xoa: ");
         String xoas = sc.nextLine();
+
         for (int i = 0; i < DanhSachSach.length; i++) {
             if (DanhSachSach[i].getMaSach().equalsIgnoreCase(xoas)) {
                 for (int j = i; j < DanhSachSach.length - 1; j++) {
@@ -88,17 +98,33 @@ public class BookList {
                 }
                 n--;
                 DanhSachSach = Arrays.copyOf(DanhSachSach, DanhSachSach.length - 1);
-            }
+                kt = 1;
+                break;
+            } else
+                kt = 0;
         }
+
+        if (kt == 0) {
+            System.out.println("Khong tim thay Ma_Sach!");
+        } else
+            System.out.println("Xoa thanh cong!");
     }
 
     public void timkiemsach() {
-        System.out.println("Nhap vao sach can tim: ");
+        int kt = 1;
+        System.out.print("\nNhap Ma_Sach can tim: ");
         String tims = sc.nextLine();
         for (int i = 0; i < DanhSachSach.length; i++) {
             if (DanhSachSach[i].getMaSach().equalsIgnoreCase(tims)) {
                 DanhSachSach[i].Xuat();
-            }
+                kt = 1;
+                break;
+            } else
+                kt = 0;
+        }
+
+        if (kt == 0) {
+            System.out.println("Khong tim thay Ma_Sach!");
         }
     }
 
@@ -118,28 +144,34 @@ public class BookList {
         int chon;
         do {
             Sach sach = null;
-            System.out.println("\n\n================= DANH SACH SACH =================");
-            System.out.println("1. Sach Viet Nam");
-            System.out.println("2. Sach Giao Khoa");
-            System.out.println("3. Sach tuy thich");
-            System.out.println("0. Thoat");
+            System.out.println("\n\n============ CHON THE LOAI ============\n");
+            System.out.println("\t1. Sach Viet Nam");
+            System.out.println("\t2. Sach Giao Khoa");
+            System.out.println("\t3. Sach tuy thich");
+            System.out.println("\t0. Thoat");
             System.out.println("==================================================");
-            System.out.println("Nhap vao sach ban muon them: ");
-            chon = check.KiemTraNhapSoNguyen();
+            System.out.print("Nhap lua chon cua ban: ");
+            chon = Menu.check.KiemTraNhapSoNguyen();
+
             switch (chon) {
                 case 0:
                     break;
                 case 1:
                     sach = new SachVietNam();
                     sach.Nhap();
+                    Menu.ghi.GhiDanhSachSach(sach);
+                    Menu.ghi.GhiDanhSachSachVietNam(sach);
                     break;
                 case 2:
                     sach = new SachGiaoKhoa();
                     sach.Nhap();
+                    Menu.ghi.GhiDanhSachSach(sach);
+                    Menu.ghi.GhiDanhSachSGK(sach);
                     break;
                 case 3:
                     sach = new Sach();
                     sach.Nhap();
+                    Menu.ghi.GhiDanhSachSach(sach);
             }
             if (sach != null) {
                 DanhSachSach = Arrays.copyOf(DanhSachSach, DanhSachSach.length + 1);
@@ -154,17 +186,18 @@ public class BookList {
         System.out.printf("\n");
         int chon;
         do {
-            System.out.println("=================== Danh Sach Sach ===================");
-            System.out.println("1. Them sach moi");
-            System.out.println("2. Xoa sach");
-            System.out.println("3. Tim kiem sach");
-            System.out.println("4. Xem danh sach sach Viet Nam");
-            System.out.println("5. Xem danh sach sach giao khoa");
-            System.out.println("6. Xem danh sach tong hop");
-            System.out.println("0. Tro ve");
-            System.out.println("===========================================================");
-            System.out.println("Nhap lua chon cua ban: ");
-            chon = check.KiemTraNhapSoNguyen();
+            System.out.println("\n\n================ Quan Ly Cac Quyen Sach ================\n");
+            System.out.println("\t1. Them sach moi");
+            System.out.println("\t2. Xoa sach");
+            System.out.println("\t3. Tim kiem sach");
+            System.out.println("\t4. Xem danh sach sach Viet Nam");
+            System.out.println("\t5. Xem danh sach sach Giao Khoa");
+            System.out.println("\t6. Xem danh sach Tong Hop");
+            System.out.println("\t0. Tro ve");
+            System.out.println("\n===========================================================");
+            System.out.print("Nhap lua chon cua ban: ");
+            chon = Menu.check.KiemTraNhapSoNguyen();
+
             switch (chon) {
                 case 0:
                     break;

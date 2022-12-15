@@ -24,8 +24,6 @@ public class SachGiaoKhoa extends Sach {
     @Override
 
     public void Xuat() {
-        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", "Ma sach", "Ten sach", "Tac gia",
-                "Nha xuat ban", "Tinh trang sach", "The loai");
         System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", this.maSach, this.tenSach, this.tenTacGia,
                 this.nhaXB, this.tinhtrang, this.theloai);
     }

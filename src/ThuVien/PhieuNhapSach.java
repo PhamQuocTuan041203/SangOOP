@@ -34,7 +34,7 @@ public class PhieuNhapSach {
 	}
 
 	public void setNgayNhapHang() {
-		System.out.println("Nhap vao ngay nhap hang:");
+		System.out.print("Nhap vao ngay nhap hang: ");
 		NgayNhapHang = sc.nextLine();
 	}
 
@@ -64,11 +64,11 @@ public class PhieuNhapSach {
 
 	public void Nhap() {
 		setNgayNhapHang();
-		System.out.println("Ma phieu nhap: ");
+		System.out.print("Ma phieu nhap: ");
 		MaPhieuNhap = sc.nextLine();
-		System.out.println("Ten nhan vien dang nhap: ");
+		System.out.print("Ten nhan vien dang nhap: ");
 		TenNV = sc.nextLine();
-		System.out.println("Tong tien la: ");
+		System.out.print("Tong tien la: ");
 		TongTien = Double.parseDouble(sc.nextLine());
 	}
 

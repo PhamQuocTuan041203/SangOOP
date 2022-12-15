@@ -2,33 +2,107 @@ package ThuVien;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
 
-public class GhiVaDocFile implements File {
+public class GhiVaDocFile implements Filee {
 
 	@Override
-	public void GhiDanhSachNhanVien(DanhSachNhanVien nv) {
-		// try {
-		// 	FileReader fr = new FileReader("D://DanhSachSach.txt");
-		// 	BufferedReader br = new BufferedReader(fr);
-		// 	String line;
-		// 	while (true) {
-		// 		line = br.readLine();
-		// 		if (line == null)
-		// 			break;
-		// 		String[] strArray = line.split(";");
-		// 		Sach s = new Sach();
-		// 		s.setMaSach(strArray[0]);
-		// 		s.setTenSach(strArray[1]);
-		// 		s.setTenTacGia(strArray[2]);
-		// 		s.setNhaXB(strArray[3]);
-		// 		s.setTinhtrang(strArray[4]);
-		// 		s.setTheloai(strArray[5]);
-		// 		sach.NhapDanhSach(s);
-		// 	}
-		// 	fr.close();
-		// } catch (Exception e) {
-		// 	System.out.println(e);
-		// }
+	public void GhiDanhSachTheMuon(themuon The) {
+		try {
+			File file = new File("D://DanhSachTheMuon.txt");
+			FileWriter fw = new FileWriter(file, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.println(The.maMuon + ";" + The.maKhach + ";" + The.maSach + ";" + The.ngayMuon + ";" + The.hanTra);
+			pw.close();
+		} catch (IOException ioe) {
+			System.out.println("Exception occurred:");
+			ioe.printStackTrace();
+		}
+	}
+
+	@Override
+	public void GhiDanhSachTheThuVien(TheThuVien the) {
+		try {
+			File file = new File("D://DanhSachTheThuVien.txt");
+			FileWriter fw = new FileWriter(file, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.println(the.MaDocGia + ";" + the.hoten + ";" + the.ngaysinh + ";" + the.email + ";" + the.dc + ";"
+					+ the.dienthoai + ";" + the.gioitinh + ";" + the.SoThe + ";" + the.ngaybatdau + ";"
+					+ the.ngayketthuc);
+			pw.close();
+		} catch (IOException ioe) {
+			System.out.println("Exception occurred:");
+			ioe.printStackTrace();
+		}
+	}
+
+	@Override
+	public void GhiDanhSachNhanVien(NhanVien nv) {
+		try {
+			File file = new File("D://DanhSachNhanVien.txt");
+			FileWriter fw = new FileWriter(file, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.println(nv.MaNV + ";" + nv.hoten + ";" + nv.luongcb + ";" + nv.hesoluong + ";");
+			pw.close();
+		} catch (IOException ioe) {
+			System.out.println("Exception occurred:");
+			ioe.printStackTrace();
+		}
+	}
+
+	@Override
+	public void GhiDanhSachSach(Sach s) {
+		try {
+			File file = new File("D://DanhSachSach.txt");
+			FileWriter fw = new FileWriter(file, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.println(s.maSach + ";" + s.tenSach + ";" + s.tenTacGia + ";" + s.nhaXB + ";" + s.tinhtrang + ";"
+					+ s.theloai + ";");
+			pw.close();
+		} catch (IOException ioe) {
+			System.out.println("Exception occurred:");
+			ioe.printStackTrace();
+		}
+	}
+
+	@Override
+	public void GhiDanhSachSGK(Sach s) {
+		try {
+			File file = new File("D://DanhSachSGK.txt");
+			FileWriter fw = new FileWriter(file, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.println(s.maSach + ";" + s.tenSach + ";" + s.tenTacGia + ";" + s.nhaXB + ";" + s.tinhtrang + ";"
+					+ s.theloai + ";");
+			pw.close();
+		} catch (IOException ioe) {
+			System.out.println("Exception occurred:");
+			ioe.printStackTrace();
+		}
+	}
+
+	@Override
+	public void GhiDanhSachSachVietNam(Sach s) {
+		try {
+			File file = new File("D://DanhSachSachVietNam.txt");
+			FileWriter fw = new FileWriter(file, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter pw = new PrintWriter(bw);
+			pw.println(s.maSach + ";" + s.tenSach + ";" + s.tenTacGia + ";" + s.nhaXB + ";" + s.tinhtrang + ";"
+					+ s.theloai + ";");
+			pw.close();
+		} catch (IOException ioe) {
+			System.out.println("Exception occurred:");
+			ioe.printStackTrace();
+		}
 	}
 
 	@Override

@@ -46,12 +46,13 @@ public class DanhSachTheMuon {
     }
 
     public void xuatthemuon() {
-        System.out.println(
-                "+---------------------------------(Danh sach cac the duoc muon)----------------------------------------------+:");
+        System.out.println("\n\n\t==================== DANH SACH CAC THE MUON ====================\n");
+        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s]\n", "Ma muon", "Ma khach hang", "Ma sach", "Ngay muon",
+                "Hen tra");
+        System.out.println();
+
         for (int i = 0; i < n; i++) {
             DanhSachTheMuon[i].Xuat();
-            System.out.println(
-                    "|____________________________________________________________________________________________________|");
         }
     }
 

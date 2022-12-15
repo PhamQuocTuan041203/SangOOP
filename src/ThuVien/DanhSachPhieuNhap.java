@@ -7,7 +7,7 @@ public class DanhSachPhieuNhap {
 
 	private int n;
 	private PhieuNhapSach[] DanhSachPhieuNhap;
-	
+
 	private final Scanner sc = new Scanner(System.in);
 
 	private final CheckLoi check = new CheckLoi();
@@ -31,11 +31,11 @@ public class DanhSachPhieuNhap {
 	}
 
 	public void nhapds() {
-		System.out.println("Nhap vao so phieu nhap: ");
+		System.out.print("\nNhap vao so phieu nhap: ");
 		n = Integer.parseInt(sc.nextLine());
 		DanhSachPhieuNhap = new PhieuNhapSach[n];
 		for (int i = 0; i < n; i++) {
-			System.out.println("Nhap vao phieu nhap thu: " + (i + 1));
+			System.out.println("\nNhap vao phieu nhap thu: " + (i + 1));
 			DanhSachPhieuNhap[i] = new PhieuNhapSach();
 			DanhSachPhieuNhap[i].Nhap();
 		}
@@ -49,7 +49,8 @@ public class DanhSachPhieuNhap {
 	}
 
 	public void xoapn() {
-		System.out.println("Nhap ma phieu nhap can xoa: ");
+		int kt = 1;
+		System.out.print("Nhap Ma_PhieuNhap can xoa: ");
 		String xoas = sc.nextLine();
 		for (int i = 0; i < DanhSachPhieuNhap.length; i++) {
 			if (DanhSachPhieuNhap[i].getMaPhieuNhap().equalsIgnoreCase(xoas)) {
@@ -58,17 +59,33 @@ public class DanhSachPhieuNhap {
 				}
 				n--;
 				DanhSachPhieuNhap = Arrays.copyOf(DanhSachPhieuNhap, DanhSachPhieuNhap.length - 1);
-			}
+				kt = 1;
+				break;
+			} else
+				kt = 0;
 		}
+
+		if (kt == 0) {
+			System.out.println("Khong tim thay Ma_NV!");
+		} else
+			System.out.println("Xoa thanh cong!");
 	}
 
 	public void timkiempn() {
-		System.out.println("Nhap vao phieu nhap can tim: ");
+		int kt = 1;
+		System.out.print("Nhap Ma_PhieuNhap can tim: ");
 		String tims = sc.nextLine();
 		for (int i = 0; i < DanhSachPhieuNhap.length; i++) {
 			if (DanhSachPhieuNhap[i].getMaPhieuNhap().equalsIgnoreCase(tims)) {
 				DanhSachPhieuNhap[i].Xuat();
-			}
+				kt = 1;
+				break;
+			} else
+				kt = 0;
+		}
+
+		if (kt == 0) {
+			System.out.println("Khong tim thay Ma_NV!");
 		}
 	}
 

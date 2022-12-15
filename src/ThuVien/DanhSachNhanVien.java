@@ -29,16 +29,24 @@ public class DanhSachNhanVien {
 	}
 
 	public void xuatds() {
-		System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "\nMa nhan vien", "Ho ten", "Luong co ban", "He so luong",
+		System.out.println(
+				"\n\n_________________________________________________________________________________________________________________________________________________________");
+		System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "Ma nhan vien", "Ho ten", "Luong co ban", "He so luong",
 				"Luong chinh thuc");
+		System.out.println();
+
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			DanhSachNhanVien[i].Xuat();
 		}
+		System.out.println(
+				"_________________________________________________________________________________________________________________________________________________________");
 	}
 
 	public void xoanv() {
-		System.out.print("Nhap ma nhan vien muon xoa: ");
+		System.out.print("\nNhap Ma_NV muon xoa: ");
 		String xoanv = sc.nextLine();
+		int kt = 1;
+
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			if (DanhSachNhanVien[i].getMaNV().equalsIgnoreCase(xoanv)) {
 				for (int j = i; j < DanhSachNhanVien.length - 1; j++) {
@@ -46,27 +54,49 @@ public class DanhSachNhanVien {
 				}
 				n--;
 				DanhSachNhanVien = Arrays.copyOf(DanhSachNhanVien, DanhSachNhanVien.length - 1);
-			}
+				kt = 1;
+				break;
+			} else
+				kt = 0;
 		}
+
+		if (kt == 0) {
+			System.out.println("Khong tim thay Ma_NV!");
+		} else
+			System.out.println("Xoa thanh cong!");
 	}
 
 	public void timkiemnv() {
-		System.out.print("Nhap ma nhan vien muon tim: ");
+		int kt = 1;
+		System.out.print("\nNhap Ma_NV muon tim: ");
 		String timnv = sc.nextLine();
+
 		for (int i = 0; i < DanhSachNhanVien.length; i++) {
 			if (DanhSachNhanVien[i].getMaNV().equalsIgnoreCase(timnv)) {
 				DanhSachNhanVien[i].Xuat();
-			}
+				kt = 1;
+				break;
+			} else
+				kt = 0;
+		}
+
+		if (kt == 0) {
+			System.out.println("Khong tim thay Ma_NV!");
+		} else {
+			System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "Ma nhan vien", "Ho ten", "Luong co ban", "He so luong",
+					"Luong chinh thuc");
+			System.out.println();
 		}
 	}
 
 	public void themnv() {
-		System.out.println("Nhap ma nhan vien muon them: ");
+		System.out.print("\nThem Nhan Vien\n");
 		NhanVien nv = new NhanVien();
 		nv.nhap();
 		DanhSachNhanVien = Arrays.copyOf(DanhSachNhanVien, DanhSachNhanVien.length + 1);
 		DanhSachNhanVien[n] = nv;
 		n++;
+		Menu.ghi.GhiDanhSachNhanVien(nv);
 	}
 
 	public void NhapDanhSachNhanVien(NhanVien nv) {
@@ -84,13 +114,13 @@ public class DanhSachNhanVien {
 	public void QuanLyNhanVien() {
 		String lc;
 		while (true) {
-			System.out.println("\n\n================ QUAN LI NHAN VIEN ===============");
-			System.out.println("1. Them nhan vien");
-			System.out.println("2. Xoa nhan vien");
-			System.out.println("3. Tim kiem nhan vien");
-			System.out.println("4. Xem danh sach nhan vien");
-			System.out.println("0. Tro ve");
-			System.out.println("==================================================");
+			System.out.println("\n\n================ QUAN LI NHAN VIEN ===============\n");
+			System.out.println("\t1. Them nhan vien");
+			System.out.println("\t2. Xoa nhan vien");
+			System.out.println("\t3. Tim kiem nhan vien");
+			System.out.println("\t4. Xem danh sach nhan vien");
+			System.out.println("\t0. Tro ve");
+			System.out.println("\n==================================================");
 			System.out.print("Nhap lua chon cua ban: ");
 			lc = sc.nextLine();
 

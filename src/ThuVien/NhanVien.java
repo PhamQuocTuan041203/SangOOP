@@ -68,15 +68,15 @@ public class NhanVien {
 		System.out.print("Nhap ho va ten nhan vien: ");
 		hoten = sc.nextLine();
 		System.out.print("Nhap luong co ban: ");
-		luongcb = Integer.parseInt(sc.nextLine());
+		luongcb = Menu.check.KiemTraNhapSoNguyen();
+		// luongcb = Integer.parseInt(sc.nextLine());
 		System.out.print("Nhap he so luong: ");
-		hesoluong = Integer.parseInt(sc.nextLine());
+		// hesoluong = Integer.parseInt(sc.nextLine());
+		hesoluong = Menu.check.KiemTraNhapSoNguyen();
 	}
 
 	public void Xuat() {
-		System.out.printf("%-15s%-15s%-20s%-20s%-20s\n", "Ma nhan vien", "Ten nhan vien", "Luong co ban", "He so luong",
-				"Luong chinh thuc");
-		System.out.printf("%-15s%-20s%-20s%-15s%-15s\n", this.MaNV, this.hoten, this.luongcb, this.hesoluong,
+		System.out.printf("%-15s%-18s%-20s%-15s%-15s\n", this.MaNV, this.hoten, this.luongcb, this.hesoluong,
 				tinhluong());
 	}
 

@@ -41,30 +41,35 @@ public class DanhSachTheThuVien {
             System.out.println("Nhap vao the thu: " + (i + 1));
             TheThuVien a = new TheThuVien();
             arrt[i] = new TheThuVien();
-            arrt[i].Nhap();
+            arrt[i].thongTinConNguoi();
         }
     }
 
     public void xuatds() {
-        System.out.println("=== The Thu Vien ===");
+        System.out.println("\n\n\n\t\t\t===================== Danh Sach The Thu Vien =====================\n");
+        System.out.printf("[%-10s][%-15s][%-15s][%-25s][%-10s][%-10s][%-10s][%-10s][%-15s][%-15s]\n", "Ma doc gia",
+                "Ho ten", "Ngay sinh", "Email", "Dia chi", "Dien thoai", "Gioi tinh", "So the", "Ngay bat dau",
+                "Ngay ket thuc");
+        System.out.println();
+
         for (int i = 0; i < arrt.length; i++) {
             arrt[i].Xuat();
-            System.out.println(
-                    "|____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________|");
         }
     }
 
     public void nhapthemthe() {
-        System.out.println("Nhap them thong tin the muon: ");
+        System.out.println("\nThem the Thu Vien");
         TheThuVien the = new TheThuVien();
-        the.Nhap();
+        the.thongTinConNguoi();
         arrt = Arrays.copyOf(arrt, arrt.length + 1);
         arrt[n] = the;
         n++;
+        Menu.ghi.GhiDanhSachTheThuVien(the);
     }
 
     public void xoathe() {
-        System.out.println("Nhap ma the can xoa: ");
+        int kt = 1;
+        System.out.print("\nNhap vao Ma_TheThuVien can xoa: ");
         String xoathe = sc.nextLine();
         for (int i = 0; i < arrt.length; i++) {
             if (arrt[i].getSoThe().equalsIgnoreCase(xoathe)) {
@@ -73,17 +78,33 @@ public class DanhSachTheThuVien {
                 }
                 n--;
                 arrt = Arrays.copyOf(arrt, arrt.length - 1);
-            }
+                kt = 1;
+                break;
+            } else
+                kt = 0;
         }
+
+        if (kt == 0) {
+            System.out.println("Khong tim thay Ma_The!");
+        } else
+            System.out.println("Xoa thanh cong!");
     }
 
     public void timkiemthe() {
-        System.out.println("Nhap vao the dang muon can tim: ");
+        int kt = 1;
+        System.out.print("\nNhap vao Ma_TheThuVien can tim: ");
         String timthe = sc.nextLine();
         for (int i = 0; i < arrt.length; i++) {
             if (arrt[i].getSoThe().equalsIgnoreCase(timthe)) {
                 arrt[i].Xuat();
-            }
+                kt = 1;
+                break;
+            } else
+                kt = 0;
+        }
+
+        if (kt == 0) {
+            System.out.println("Khong tim thay Ma_The!");
         }
     }
 
@@ -100,17 +121,16 @@ public class DanhSachTheThuVien {
     }
 
     public void QuanLyTheThuVien() {
-        System.out.printf("\n");
         int chon;
         do {
-            System.out.println("============== QUAN LI THE THU VIEN ==============");
+            System.out.println("\n\n============== QUAN LI THE THU VIEN ==============\n");
             System.out.println("\t1. Them the thu vien");
             System.out.println("\t2. Xoa the thu vien");
             System.out.println("\t3. Tim kiem thu vien");
             System.out.println("\t4. Xem danh sach the thu vien");
             System.out.println("\t0. Thoat");
-            System.out.println("==================================================");
-            System.out.println("Your choosen: ");
+            System.out.println("\n==================================================");
+            System.out.print("Your choosen: ");
             chon = check.KiemTraNhapSoNguyen();
             switch (chon) {
                 case 0:

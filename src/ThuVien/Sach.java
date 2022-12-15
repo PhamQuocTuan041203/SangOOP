@@ -33,7 +33,7 @@ public class Sach {
     }
 
     public void setMaSach() {
-        System.out.println("Nhap vao ma sach: ");
+        System.out.print("Nhap vao ma sach: ");
         maSach = sc.nextLine();
     }
 
@@ -46,7 +46,7 @@ public class Sach {
     }
 
     public void setTenSach() {
-        System.out.println("Nhap vao ten sach: ");
+        System.out.print("Nhap vao ten sach: ");
         tenSach = sc.nextLine();
     }
 
@@ -59,7 +59,7 @@ public class Sach {
     }
 
     public void setTenTacGia() {
-        System.out.println("Nhap vao ten tac gia: ");
+        System.out.print("Nhap vao ten tac gia: ");
         tenTacGia = sc.nextLine();
     }
 
@@ -72,7 +72,7 @@ public class Sach {
     }
 
     public void setNhaXB() {
-        System.out.println("Nhap vao nha xuat ban: ");
+        System.out.print("Nhap vao nha xuat ban: ");
         nhaXB = sc.nextLine();
     }
 
@@ -85,7 +85,7 @@ public class Sach {
     }
 
     public void setTinhtrang() {
-        System.out.println("Tinh trang sach: ");
+        System.out.print("Tinh trang sach: ");
         tinhtrang = sc.nextLine();
     }
 
@@ -94,7 +94,7 @@ public class Sach {
     }
 
     public void setTheloai() {
-        System.out.println("The loai gi: ");
+        System.out.print("The loai gi: ");
         theloai = sc.nextLine();
     }
 
@@ -103,6 +103,7 @@ public class Sach {
     }
 
     public void Nhap() {
+        System.out.println();
         setMaSach();
         setTenSach();
         setTenTacGia();
@@ -118,8 +119,6 @@ public class Sach {
     }
 
     public void Xuat() {
-        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", "Ma sach", "Ten sach", "Tac gia",
-                "Nha xuat ban", "Tinh trang sach", "The loai");
         System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s][%-15s]\n", this.maSach, this.tenSach, this.tenTacGia,
                 this.nhaXB, this.tinhtrang, this.theloai);
     }

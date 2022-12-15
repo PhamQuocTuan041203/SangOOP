@@ -95,8 +95,6 @@ public class themuon {
     }
 
     public void Xuat() {
-        System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s]\n", "Ma muon", "Ma khach hang", "Ma sach", "Ngay muon",
-                "Hen tra");
         System.out.printf("[%-15s][%-25s][%-20s][%-15s][%-15s]\n", this.maMuon, this.maKhach, this.maSach,
                 this.ngayMuon, this.hanTra);
     }

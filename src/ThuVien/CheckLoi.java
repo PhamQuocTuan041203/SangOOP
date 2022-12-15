@@ -81,7 +81,7 @@ public class CheckLoi {
                 DauVao = Integer.parseInt(scanner.nextLine());
                 return DauVao;
             } catch (NumberFormatException exception) {
-                System.out.print("Sai kieu du lieu! Moi nhap lai: ");
+                System.out.print("Sai kieu du lieu!\nMoi nhap lai: ");
             }
         }
     }

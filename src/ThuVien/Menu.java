@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
 
-	private File ghi = new GhiVaDocFile();
+	public static Filee ghi = new GhiVaDocFile();
 	private BookList DanhSachSach = new BookList();
 	private BookList DanhSachSachMuon = new BookList();
 	private DanhSachNhanVien DanhSachNhanVien = new DanhSachNhanVien();
@@ -13,7 +13,7 @@ public class Menu {
 	private DanhSachPhieuNhap DanhSachPhieuNhap = new DanhSachPhieuNhap();
 
 	private Scanner sc = new Scanner(System.in);
-	private CheckLoi check = new CheckLoi();
+	public static CheckLoi check = new CheckLoi();
 
 	public void KhoiTaoDuLieu() {
 		ghi.DocDanhSachSach(DanhSachSach);
@@ -27,10 +27,10 @@ public class Menu {
 	public void BatDauChuongTrinh() {
 		while (true) {
 			String lc;
-			System.out.println("\n\n========== CHUONG TRINH QUAN LY THU VIEN =========");
+			System.out.println("\n\n========== CHUONG TRINH QUAN LY THU VIEN =========\n");
 			System.out.println("\t1. Dang nhap");
 			System.out.println("\t0. Thoat");
-			System.out.println("==================================================");
+			System.out.println("\n==================================================");
 			System.out.print("Nhap lua chon cua ban: ");
 			lc = sc.nextLine();
 
@@ -81,14 +81,14 @@ public class Menu {
 	public void DanhSachAdmin() {
 		String lc;
 		while (true) {
-			System.out.println("\n\n================== QUAN LY AMDIN =================");
-			System.out.println("1. Quan li Nhan Vien");
-			System.out.println("2. Quan li Sach");
-			System.out.println("3. Quan li The Thu Vien");
-			System.out.println("4. Danh sach The Thu Vien");
-			System.out.println("5. Quan li Phieu Nhap");
-			System.out.println("0. Tro ve");
-			System.out.println("==================================================");
+			System.out.println("\n\n================= QUAN LY AMDIN ================\n");
+			System.out.println("\t1. Quan li Nhan Vien");
+			System.out.println("\t2. Quan li Sach");
+			System.out.println("\t3. Quan li The Thu Vien");
+			System.out.println("\t4. Danh sach Cac The Muon");
+			System.out.println("\t5. Quan li Phieu Nhap");
+			System.out.println("\t0. Tro ve");
+			System.out.println("\n================================================");
 			System.out.print("Nhap lua chon cua ban: ");
 			lc = sc.nextLine();
 
@@ -125,15 +125,15 @@ public class Menu {
 	public void QuanLyNhanVien() {
 		String lc;
 		while (true) {
-			System.out.println("\n\n=============== QUAN LI NHAN VIEN ================");
-			System.out.println("1. Thong ke sach Viet Nam");
-			System.out.println("2. Thong ke sach Giao Khoa");
-			System.out.println("3. Thong ke tat ca sach");
-			System.out.println("4. Tim kiem sach");
-			System.out.println("5. Xuat danh sach the muon");
-			System.out.println("6. Nguoi dung muon sach");
-			System.out.println("0. Tro ve");
-			System.out.println("==================================================");
+			System.out.println("\n\n=============== QUAN LI NHAN VIEN ================\n");
+			System.out.println("\t1. Thong ke sach Viet Nam");
+			System.out.println("\t2. Thong ke sach Giao Khoa");
+			System.out.println("\t3. Thong ke tat ca sach");
+			System.out.println("\t4. Tim kiem sach");
+			System.out.println("\t5. Xuat danh sach the muon");
+			System.out.println("\t6. Nguoi dung muon sach");
+			System.out.println("\t0. Tro ve");
+			System.out.println("\n==================================================");
 			System.out.print("Nhap lua chon cua ban: ");
 			lc = sc.nextLine();
 
@@ -174,13 +174,13 @@ public class Menu {
 	public void QuanLyPhieuNhap() {
 		String lc;
 		while (true) {
-			System.out.println("\n\n============== QUAN LI PHIEU NHAP ================");
-			System.out.println("1. Them Phieu Nhap");
-			System.out.println("2. Danh sach Phieu Nhap");
-			System.out.println("3. Xoa Phieu Nhap");
-			System.out.println("4. Tim kiem Phieu Nhap");
-			System.out.println("0. Tro ve");
-			System.out.println("==================================================");
+			System.out.println("\n\n========= QUAN LI PHIEU NHAP ===========\n");
+			System.out.println("\t1. Them Phieu Nhap");
+			System.out.println("\t2. Danh sach Phieu Nhap");
+			System.out.println("\t3. Xoa Phieu Nhap");
+			System.out.println("\t4. Tim kiem Phieu Nhap");
+			System.out.println("\t0. Tro ve");
+			System.out.println("\n========================================");
 			System.out.print("Nhap lua chon cua ban: ");
 			lc = sc.nextLine();
 
@@ -211,38 +211,46 @@ public class Menu {
 	}
 
 	public void MuonSach() {
+		int kt = 1;
 		do {
-			DanhSachSach.xuatds();
-			System.out.println("Nhap ma sach muon muon\nNhap 0 de tiep tuc");
-			System.out.print("Nhap lua chon cua ban: ");
+			System.out.println("\n\n0. Tiep tuc");
+			System.out.print("Nhap Ma_Sach can muon: ");
 			String MaSach = sc.nextLine();
 			if (MaSach.charAt(0) == '0') {
 				break;
 			} else {
 				for (int i = 0; i < DanhSachSach.getN(); i++) {
 					if (DanhSachSach.getSach(i).getMaSach().equals(MaSach)) {
-						System.out.println("Ma sach la: " + DanhSachSach.getSach(i).getMaSach());
+						System.out.println("Nhap thanh cong!");
 						DanhSachSachMuon.NhapDanhSach(DanhSachSach.getSach(i));
-					}
+						kt = 1;
+						break;
+					} else
+						kt = 0;
+				}
+
+				if (kt == 0) {
+					System.out.println("Khong tim thay Ma_Sach!");
 				}
 			}
 		} while (true);
 	}
 
 	public void ChoMuonSach() {
+		System.out.println("\nNhap thong tin nguoi muon sach");
 		TheThuVien thethuvien = new TheThuVien();
-		System.out.println("Nhap ma doc gia: ");
+		System.out.print("Nhap Ma_DocGia: ");
 		String MaDocGia = sc.nextLine();
 		for (int i = 0; i < DanhSachTheThuVien.getN(); i++) {
 			if (DanhSachTheThuVien.getThe(i).getMaDocGia().equals(MaDocGia)) {
 				thethuvien = DanhSachTheThuVien.getThe(i);
 			}
 		}
-		System.out.println("Nhap vao ma muon: ");
+		System.out.print("Nhap vao Ma_TheMuon: ");
 		String MaMuon = sc.nextLine();
-		System.out.println("Nhap vao ngay muon: ");
+		System.out.print("Nhap vao ngay muon: ");
 		String NgayMuon = sc.nextLine();
-		System.out.println("Nhap vao ngay tra: ");
+		System.out.print("Nhap vao ngay tra: ");
 		String NgayTra = sc.nextLine();
 
 		for (int i = 0; i < DanhSachSachMuon.getN(); i++) {
@@ -253,6 +261,7 @@ public class Menu {
 			The.setMaMuon(MaMuon);
 			The.setMaSach(DanhSachSachMuon.getSach(i).getMaSach());
 			DanhSachTheMuon.NhapDanhSach(The);
+			ghi.GhiDanhSachTheMuon(The);
 		}
 		DanhSachSachMuon = new BookList();
 	}

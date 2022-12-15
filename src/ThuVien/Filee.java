@@ -1,6 +1,6 @@
 package ThuVien;
 
-public interface File {
+public interface Filee {
 
     public void DocDanhSachSach(BookList sach);
 
@@ -14,5 +14,15 @@ public interface File {
 
     public void DocDanhSachNhanVien(DanhSachNhanVien nv);
 
-    public void GhiDanhSachNhanVien(DanhSachNhanVien nv);
+    public void GhiDanhSachNhanVien(NhanVien nv);
+
+    public void GhiDanhSachSach(Sach s);
+
+    public void GhiDanhSachSachVietNam(Sach s);
+
+    public void GhiDanhSachSGK(Sach s);
+
+    public void GhiDanhSachTheThuVien(TheThuVien the);
+    
+    public void GhiDanhSachTheMuon(themuon The);
 }

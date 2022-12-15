@@ -2,7 +2,7 @@ package ThuVien;
 
 import java.util.Scanner;
 
-public class ConNguoi {
+public abstract class ConNguoi {
 
     protected String hoten;
     protected String ngaysinh;
@@ -79,20 +79,7 @@ public class ConNguoi {
         this.gioitinh = gioitinh;
     }
 
-    public void Nhap() {
-        System.out.println("Nhap ho ten: ");
-        this.hoten = inp.nextLine();
-        System.out.println("Nhap ngay sinh: ");
-        this.ngaysinh = inp.nextLine();
-        System.out.println("Nhap email: ");
-        this.email = inp.nextLine();
-        System.out.println("Nhap dia chi: ");
-        dc = inp.nextLine();
-        System.out.println("Nhap dien thoai: ");
-        this.dienthoai = inp.nextLine();
-        System.out.println("Gioi tinh: ");
-        this.gioitinh = inp.nextLine();
-    }
+    public abstract void thongTinConNguoi();
 
     public void Xuat() {
         System.out.println(this.hoten);

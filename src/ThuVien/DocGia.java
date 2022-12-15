@@ -27,11 +27,21 @@ public class DocGia extends ConNguoi {
         this.MaDocGia = MaDocGia;
     }
 
-    @Override
-    public void Nhap() {
-        System.out.println("Nhap vao ma doc gia: ");
+    public void thongTinConNguoi() {
+        System.out.print("Nhap vao ma Doc Gia: ");
         MaDocGia = sc.nextLine();
-        super.Nhap();
+        System.out.print("Nhap ho ten: ");
+        this.hoten = inp.nextLine();
+        System.out.print("Nhap ngay sinh: ");
+        this.ngaysinh = inp.nextLine();
+        System.out.print("Nhap email: ");
+        this.email = inp.nextLine();
+        System.out.print("Nhap dia chi: ");
+        dc = inp.nextLine();
+        System.out.print("Nhap dien thoai: ");
+        this.dienthoai = inp.nextLine();
+        System.out.print("Gioi tinh: ");
+        this.gioitinh = inp.nextLine();
     }
 
     @Override
